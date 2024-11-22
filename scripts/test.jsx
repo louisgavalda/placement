@@ -1,3 +1,3 @@
-#include "utils.js";
+#include "utils.jsx";
 
 alertMessage();
