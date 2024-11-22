@@ -1,7 +1,7 @@
 # Scripts pour Adobe Illustrator
 
 `
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/louisgavalda/placement/refs/heads/main/install.sh)"
 `
 
 - `/Library/Application Support/Adobe/Startup Scripts CC/Illustrator 2025`
