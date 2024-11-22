@@ -1,22 +1,27 @@
 # Scripts pour Adobe Illustrator
 
-## Installation / mise à jour
+## Installation
 
+### Depuis le terminal
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/louisgavalda/placement/refs/heads/main/install.sh)"
 ```
+
+### Pour créer une application
 ```
 tell application "Terminal"
 	activate
 	do script "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/louisgavalda/placement/refs/heads/main/install.sh)\""
 end tell
 ```
+cf. [Enregistrer un script en tant qu’app dans Éditeur de script sur Mac](https://support.apple.com/fr-fr/guide/script-editor/scpedt1072/2.11/mac/15.0)
 
-- `/Library/Application Support/Adobe/Startup Scripts CC/Illustrator 2025`
+### Installation manuelle
+Copier le contenu du dossier `scripts/` dans le(s) dossier(s) suivant(s) :
 - `/Applications/Adobe Illustrator 2025/Presets.localized/fr_FR/Scripts`
 
 ## Ressources
-
+`/Library/Application Support/Adobe/Startup Scripts CC/Illustrator 2025`
 https://helpx.adobe.com/illustrator/using/automation-scripts.html
 https://helpx.adobe.com/fr/photoshop/using/scripting.html
 https://github.com/lohriialo/illustrator-scripting-python
