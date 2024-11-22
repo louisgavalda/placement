@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-ZIP_URL="https://votre-url-fixe.com/archive.zip"  # <-- Mettez votre URL ici
+ZIP_URL="https://raw.githubusercontent.com/louisgavalda/placement/refs/heads/main/scripts.zip"
 TEMP_DIR="/tmp/scripts_install_$(date +%s)"
 
 # Codes couleur
@@ -54,25 +54,25 @@ mkdir -p "$TEMP_DIR" || {
 
 # Téléchargement de l'archive
 info "Téléchargement de l'archive..."
-if ! curl -fsSL "$ZIP_URL" -o "$TEMP_DIR/scripts.zip"; then
+if ! curl -fsSL "$ZIP_URL" -o "$TEMP_DIR/archive.zip"; then
     error "Échec du téléchargement"
     exit 1
 fi
 
 # Vérification du fichier ZIP
-if ! file "$TEMP_DIR/scripts.zip" | grep -i "zip archive" >/dev/null; then
+if ! file "$TEMP_DIR/archive.zip" | grep -i "zip archive" >/dev/null; then
     error "Le fichier téléchargé n'est pas une archive ZIP valide"
     exit 1
 fi
 
 # Extraction de l'archive
 info "Extraction de l'archive..."
-if ! unzip -q "$TEMP_DIR/scripts.zip" -d "$TEMP_DIR"; then
+if ! unzip -q "$TEMP_DIR/archive.zip" -d "$TEMP_DIR/extracted"; then
     error "Échec de l'extraction"
     exit 1
 fi
 
-# Installation des scripts
+# Installation des fichiers
 total_installed=0
 for scripts_dir in "${SCRIPT_PATHS[@]}"; do
     if [ ! -d "$scripts_dir" ]; then
@@ -82,24 +82,31 @@ for scripts_dir in "${SCRIPT_PATHS[@]}"; do
     info "Installation dans $scripts_dir"
     count=0
 
-    # Copie des fichiers .jsx
-    while IFS= read -r -d '' file; do
-        if cp "$file" "$scripts_dir/"; then
+    # Copie de tous les fichiers et dossiers
+    cd "$TEMP_DIR/extracted" || exit 1
+    for item in .[!.]* *; do
+        # Ignorer les entrées spéciales
+        [ "$item" = "*" ] && [ ! -e "$item" ] && continue
+        [ "$item" = ".[!.]*" ] && [ ! -e "$item" ] && continue
+
+        if cp -R "$item" "$scripts_dir/"; then
             ((count++))
-            echo "  → $(basename "$file")"
+            echo "  → $item"
+        else
+            error "  ✗ Échec de copie : $item"
         fi
-    done < <(find "$TEMP_DIR" -type f -name "*.jsx" -print0)
+    done
 
     if [ $count -gt 0 ]; then
         ((total_installed+=count))
-        success "  ✓ $count scripts installés"
+        success "  ✓ $count éléments installés"
     fi
 done
 
 if [ $total_installed -eq 0 ]; then
-    error "Aucun script .jsx trouvé dans l'archive"
+    error "Aucun fichier trouvé dans l'archive"
     exit 1
 else
-    success "\nInstallation terminée : $total_installed scripts installés"
+    success "\nInstallation terminée : $total_installed éléments installés"
     info "Redémarrez Illustrator pour utiliser les nouveaux scripts"
 fi
