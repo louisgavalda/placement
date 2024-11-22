@@ -2,9 +2,9 @@
 
 ## Installation / mise à jour
 
-`
+```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/louisgavalda/placement/refs/heads/main/install.sh)"
-`
+```
 ```
 tell application "Terminal"
 	activate
