@@ -1,8 +1,16 @@
 # Scripts pour Adobe Illustrator
 
+## Installation / mise à jour
+
 `
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/louisgavalda/placement/refs/heads/main/install.sh)"
 `
+```
+tell application "Terminal"
+	activate
+	do script "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/louisgavalda/placement/refs/heads/main/install.sh)\""
+end tell
+```
 
 - `/Library/Application Support/Adobe/Startup Scripts CC/Illustrator 2025`
 - `/Applications/Adobe Illustrator 2025/Presets.localized/fr_FR/Scripts`
@@ -23,3 +31,5 @@ https://images.autodesk.com/adsk/files/autocad_2012_pdf_dxf-reference_enu.pdf
  
 https://www.youtube.com/watch?v=KPSS3Arezx4
 https://creativecloud.adobe.com/fr/discover/video/Crash-Course-Automating-Photoshop-Part-2-with-Tim-Moebest/20821
+
+https://support.apple.com/fr-fr/guide/automator/welcome/mac
