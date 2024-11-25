@@ -21,7 +21,9 @@ Copier le contenu du dossier `scripts/` dans le(s) dossier(s) suivant(s) :
 - `/Applications/Adobe Illustrator 2025/Presets.localized/fr_FR/Scripts`
 
 ## Ressources
+
 `/Library/Application Support/Adobe/Startup Scripts CC/Illustrator 2025`
+
 https://scriptui.joonas.me
 https://github.com/rjduran/adobe-scripting
 https://helpx.adobe.com/illustrator/using/automation-scripts.html
