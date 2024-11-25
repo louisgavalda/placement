@@ -15,6 +15,7 @@ NC='\033[0m'
 
 # Chemins des dossiers Scripts d'Illustrator
 SCRIPT_PATHS=(
+    "/Applications/Adobe Illustrator 2024/Presets.localized/fr_FR/Scripts/"
     "/Applications/Adobe Illustrator 2025/Presets.localized/fr_FR/Scripts/"
 )
 
