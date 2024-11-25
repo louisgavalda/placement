@@ -4,7 +4,7 @@
 # Configuration
 ZIP_URL="https://raw.githubusercontent.com/louisgavalda/placement/refs/heads/main/scripts.zip"
 TEMP_DIR="/tmp/scripts_install_$(date +%s)"
-TARGET_SUBFOLDER="MonDossierScripts"  # Nom du sous-dossier de destination
+TARGET_SUBFOLDER="0"  # Nom du sous-dossier de destination
 
 # Codes couleur
 RED='\033[0;31m'
