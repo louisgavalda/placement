@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
 
 # Configuration
 ZIP_URL="https://raw.githubusercontent.com/louisgavalda/placement/refs/heads/main/scripts.zip"
@@ -70,6 +69,7 @@ fi
 
 total_installed=0
 for scripts_dir in "${SCRIPT_PATHS[@]}"; do
+    echo scripts_dir
     if [ ! -d "$scripts_dir" ]; then
         continue
     fi
