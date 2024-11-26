@@ -18,9 +18,9 @@ SCRIPT_PATHS=(
     "/Applications/Adobe Illustrator 2025/Presets.localized/fr_FR/Scripts"
 )
 
-error() { echo -e "${RED}Erreur: $1${NC}" >&2; }
-info() { echo -e "${YELLOW}Info: $1${NC}"; }
-success() { echo -e "${GREEN}$1${NC}"; }
+error() { echo -e "${RED}[!] $1${NC}" >&2; }
+info() { echo -e "${YELLOW}[+] $1${NC}"; }
+success() { echo -e "${GREEN}[+] $1${NC}"; }
 
 cleanup() {
     [ -d "$TEMP_DIR" ] && rm -rf "$TEMP_DIR"

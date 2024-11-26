@@ -20,13 +20,22 @@ cf. [Enregistrer un script en tant qu’app dans Éditeur de script sur Mac](htt
 Copier le contenu du dossier `scripts/` dans le(s) dossier(s) suivant(s) :
 - `/Applications/Adobe Illustrator 2025/Presets.localized/fr_FR/Scripts`
 
+## Notes
+
+### Désactivation de...
+
+Vous pouvez [masquer la fenêtre d'alerte](https://helpx.adobe.com/illustrator/using/automation-scripts.html) lorsque vous...
+### JS/JSX
+Illustrator exécute de la même manière les scripts au format JS ou JSX.
+
 ## Ressources
 
 `/Library/Application Support/Adobe/Startup Scripts CC/Illustrator 2025`
 
+https://aiscripts.medium.com/how-to-write-scripts-for-adobe-illustrator-263dbd515baa
+
 https://scriptui.joonas.me
 https://github.com/rjduran/adobe-scripting
-https://helpx.adobe.com/illustrator/using/automation-scripts.html
 https://helpx.adobe.com/fr/photoshop/using/scripting.html
 https://github.com/lohriialo/illustrator-scripting-python
 https://github.com/AngeloD2022/jsxer
